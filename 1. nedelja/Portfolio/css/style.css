@@ -17,7 +17,6 @@ body {
 #wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 5% 30% 40% 40% 35% 5%; 
     grid-template-areas:
         "h h h h h h h h h h h h"
         "m m m m m m m m m m m m"
@@ -27,14 +26,19 @@ body {
         "f f f f f f f f f f f f";
 }
 
+/* Header */ 
 header {
     grid-area: h;
     grid-template-columns: repeat(1fr);
-    position: fixed;
+    position: fixed !important;
     top: 0;
     width: 100%;
-    background-color: #fff;
+    width: #fff;
     z-index: 1;
+}
+
+.navbar {
+    background-color: #fff;
 }
 
 header ul {
@@ -44,11 +48,14 @@ header ul {
 header ul li {
     display: inline-block;
     padding: 40px;
-    color: red;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
+}
+
+header a {
+    position: relative;
 }
 
 header a,
@@ -56,14 +63,35 @@ header a:hover {
     text-decoration: none;
 }
 
+header a::after {
+    content:'';
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    bottom: -10px;
+    left: 20px;
+    background-color: rgb(230, 23, 23);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+}
+
+header a:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+/* Main page */
 #main {
     grid-area: m;
     background-image: url(./img/background.png);
     background-position: center;
     background-size: cover;
     grid-template-columns: repeat(1, 1fr);
+    height: 120vh;
 }
 
+/* About me */
 h1 {
     text-align: center;
     padding-bottom: 60px;
@@ -79,7 +107,7 @@ h1:after {
     content:' ';
     height: 2px;
     width: 90px;
-    background-color: red;
+    background-color: rgb(230, 23, 23);
     margin-left: 47%;
     margin-top: 15px;
 }
@@ -87,29 +115,26 @@ h1:after {
 #about_me {
     grid-area: a;
     background-color: #f7f7f7ec;
+    height: 100vh;
 }
 
 .box {
     display: grid;
-    grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
 }
 
 .box .description, 
 .box .image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
+    margin: 70px auto;
 }
 
 .box .description {
-    width: 75%;
+    width: 70%;
     font-size: 21px;
     text-indent: 30px;
     letter-spacing: 1px;
-    margin-left: 100px;
     line-height: 30px;
+    padding: 70px 10px;
 }
 
 .box .description p::first-letter {
@@ -120,19 +145,20 @@ h1:after {
 }
 
 .box .image {
-    width: 100%;
+    width: 70%;
 }
 
 .box .image img {
-    width: 65%;
+    width: 90%;
     border-radius: 5px;
     box-shadow: 2px 7px 16px 1px rgba(0,0,0,0.91);
 }
 
+/* Projects */
 #projects {
     grid-area: p;
-    width: 100%;
     margin-bottom: 40px;
+    height: 100vh;
 }
 
 #projects .boxes {
@@ -234,16 +260,32 @@ h1:after {
     width: 60%;
 }
 
+/* Contact */
 #contact {
     grid-area: c;
     grid-template-columns: repeat(1, 1fr);   
     background-color: #f7f7f7ec; 
     margin-top: 40px;
+    height: 100vh;
+    position: relative;
+    bottom: 0;
 }
 
 #contact form {
     width: 60%;
     margin: 0 auto;
+}
+
+form .btn {
+    transition: transform 0.5s;
+}
+
+form .btn:hover {
+    color: rgb(230, 23, 23);
+    font-weight: bold;
+    border: none;
+    background-color: #fff;
+    transform: scale(1.1);
 }
 
 .links {
@@ -264,11 +306,130 @@ h1:after {
     color: #000;
 }
 
+.links i {
+    transition: transform 0.5s;
+}
+
+.links i:hover {
+    transform: scale(1.2);
+}
+
+/* Footer */
 footer {
     grid-area: f;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
     background-color: #f7f7f7ec;
 }
 
+/* Media queries */
+@media (max-width: 768px) {
+    header ul li {
+        font-size: 15px;
+    }
+
+    #main {
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    h1:after {
+        margin-left: 45%;
+    }
+
+    #about_me {
+        height: 140vh;
+    }
+
+    .box {
+        grid-template-columns: 1fr;
+    }
+
+    .box .description,
+    .box .image {
+        margin: 10px auto;
+        width: 80%;
+    }
+
+    .box .description {
+        padding: 0;
+    }
+
+    .box .image img {
+        width: 100%;
+    }
+
+    #projects .boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #contact {
+        margin-top: 500px;
+        height: 100vh;
+    }
+
+    #contact form {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        background-color: rgb(207, 43, 43);
+    }
+
+    .nav-link {
+        color: rgb(240, 239, 239) !important;
+        text-align: center;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:active,
+    .navbar-toggler-icon:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+   .box .description {
+       font-size: 15px;
+   }
+
+    header a::after {
+        display: none;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h1::after {
+        margin-left: 43%;
+    }
+
+    #main {
+        height: 100vh;
+    }
+
+    #about_me {
+        height: 120vh;
+    }
+
+    .box .image {
+        margin-top: 20px;
+    }
+
+    #projects {
+        height: 120vh;
+    }
+
+    #projects .boxes {
+        grid-template-columns: 1fr;
+    }
+
+    #contact {
+        height: 100vh;
+        margin-top: 1300px;
+    }
+}
