@@ -3,8 +3,7 @@
 
 let n = 5;
 let sign = '#';
-let space = " ";
 
-for(let i = 1; i <= 5; i++) {
-    console.log(space.repeat(n - i) + sign.repeat(i));
+for(let i = 1; i <= n; i++) {
+    console.log(' '.repeat(n - i) + '#'.repeat(i));
 }
