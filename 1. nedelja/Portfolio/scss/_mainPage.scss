@@ -1,0 +1,22 @@
+/* Main page */
+#main {
+    grid-area: m;
+    background-image: url(/resources/img/background.png);
+    background-position: center;
+    background-size: cover;
+    grid-template-columns: repeat(1, 1fr);
+    height: 120vh;
+}
+
+@media(max-width: 768px) {
+    #main {
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+@media(max-width: 600px) {
+    #main {
+        height: 100vh;
+    }
+}

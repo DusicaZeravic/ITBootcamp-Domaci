@@ -1,0 +1,79 @@
+@import "colors";
+@import "header";
+@import "mainPage";
+@import "aboutMe";
+@import "projects";
+@import "contact";
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "m m m m m m m m m m m m"
+        "a a a a a a a a a a a a"
+        "p p p p p p p p p p p p"
+        "c c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 60px;
+    font-size: 50px;
+    margin-top: 40px;
+    color: $text-color-black;
+    letter-spacing: 2px;
+    text-shadow: 6px 4px 9px rgba(152, 150, 150, 1);
+    &::after {
+        display: block;
+        content: " ";
+        height: 2px;
+        width: 90px;
+        background-color: rgb(230, 23, 23);
+        margin-left: 47%;
+        margin-top: 15px;
+    }
+}
+
+/* Footer */
+footer {
+    grid-area: f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: $background-color-two;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    h1:after {
+        margin-left: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h1::after {
+        margin-left: 43%;
+    }
+}

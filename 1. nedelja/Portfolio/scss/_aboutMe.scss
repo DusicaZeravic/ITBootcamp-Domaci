@@ -1,0 +1,78 @@
+/* About me */
+
+#about_me {
+    grid-area: a;
+    background-color: $background-color-two;
+    height: 100vh;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .description {
+        width: 70%;
+        font-size: 21px;
+        text-indent: 30px;
+        letter-spacing: 1px;
+        line-height: 30px;
+        padding: 70px 10px;
+        p {
+            &::first-letter {
+                font-size: 40px;
+                color: $text-color;
+                font-weight: bold;
+                font-family: "Satisfy", cursive;
+            }
+        }
+    }
+    .image {
+        width: 70%;
+        img {
+            width: 90%;
+            border-radius: 5px;
+            box-shadow: 2px 7px 16px 1px rgba(0, 0, 0, 0.91);
+        }
+    }
+}
+
+.box .description,
+.box .image {
+    margin: 70px auto;
+}
+
+@media (max-width: 768px) {
+    #about_me {
+        height: 140vh;
+    }
+    .box {
+        grid-template-columns: 1fr;
+        .description,
+        .image {
+            margin: 10px auto;
+            width: 80%;
+        }
+        .description {
+            padding: 0;
+        }
+        .image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #about_me {
+        height: 120vh;
+    }
+
+    .box {
+        .description {
+            font-size: 15px;
+        }
+        .image {
+            margin-top: 20px;
+        }
+    }
+}
