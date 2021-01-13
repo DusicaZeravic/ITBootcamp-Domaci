@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Playfair Display", serif;
+    width: 100%;
+    color: #4b4b4b;
+    background-color: #fffa65;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+h1 {
+    padding: 60px 0;
+    font-size: 50px;
+    text-shadow: 3px 3px 8px rgba(151, 150, 150, 0.77);
+    letter-spacing: 5px;
+}
+
+form #desc {
+    width: 700px;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+}
+
+form #desc:focus {
+    outline: none;
+}
+
+form ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+}
+
+form ul li {
+    padding-right: 50px;
+}
+
+form label {
+    font-size: 20px;
+}
+
+#add-btn {
+    border: none;
+    background-color: none;
+    padding: 10px;
+    width: 700px;
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: #fff;
+    float: right;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='30' height='36' viewport='0 0 100 100' style='fill:black;font-size:18px;'><text y='50%'>👍</text></svg>")
+            16 0,
+        auto;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#add-btn:focus {
+    outline: none;
+}
+
+#add-btn:hover {
+    background-color: #4b4b4b;
+    color: #fff;
+}
+
+#wrapper {
+    margin-top: 20px;
+}
+
+#list li {
+    width: 700px;
+    list-style: none;
+    height: 50px;
+    border-bottom: 3px solid #4b4b4b;
+    border-radius: 30px;
+    color: #4b4b4b;
+    margin-top: 15px;
+    box-shadow: 7px 6px 6px -4px rgba(0, 0, 0, 0.71);
+}
+
+li .left {
+    float: left;
+    line-height: 50px;
+    margin-left: 20px;
+}
+
+li .left input,
+li .left p {
+    display: inline-block;
+}
+
+li .left input {
+    margin-right: 20px;
+    width: 15px;
+    height: 15px;
+}
+
+li .left p {
+    font-size: 20px;
+}
+
+li button {
+    float: right;
+    border: none;
+    font-size: 20px;
+    color: rgb(126, 34, 34);
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.5s;
+    line-height: 50px;
+    margin-right: 20px;
+}
+
+li button:hover {
+    transform: scale(1.2);
+}
+
+.completed {
+    text-decoration: line-through;
+    color: rgb(126, 34, 34);
+}
