@@ -39,6 +39,7 @@ addBtn.addEventListener('click', (e) => {
     const checkboxInput = document.querySelector('.checkbox');
 
     let obj = {
+        id: service.count,
         desc: descInput.value.trim(),
         done: checkboxInput.checked
     };

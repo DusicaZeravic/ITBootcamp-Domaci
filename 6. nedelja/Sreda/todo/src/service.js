@@ -49,5 +49,6 @@ export default {
     data,
     add,
     deleteById,
-    changeById
+    changeById,
+    count
 }

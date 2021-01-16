@@ -34,12 +34,13 @@ forma.addEventListener('submit', (e) => {
         h3.innerHTML = `Vasa korpa: ${k.username}`
         korpa.append(h3);
         divKorpa.append(korpa);
+        k.add(prikaziProizvod());
         // ispisi korpu
         k.korpa.forEach(pKorpa => {
             ispisiKorpu(pKorpa);
         });
         console.log('ok');
-        // console.log(k.korpa);
+        console.log(k.korpa);
     } else {
         console.log('Korisnik sa Vasim imenom nema nalog!');
     }

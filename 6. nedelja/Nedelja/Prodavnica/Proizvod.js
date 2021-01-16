@@ -61,8 +61,10 @@ export const prikaziProizvod = (p) => {
             cena: e.target.parentNode.childNodes[1].innerText,
             kolicina: Number(inputKolicina.value)
         };
-
         console.log(objKorpa); 
         inputKolicina.value = '';
-})};
+})
+};
 
+
+    
