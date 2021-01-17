@@ -2,6 +2,9 @@ const divProizvodi = document.querySelector('.proizvodi')
 
 // Klasa Proizvod
 export class Proizvod {
+    naziv
+    cena
+    kolicina
     constructor(naziv, cena, kolicina) {
         this.naziv = naziv;
         this.cena = cena;
@@ -54,17 +57,19 @@ export const prikaziProizvod = (p) => {
         pRok.textContent = `Rok: ${p.rok} m`
         divProizvod.insertBefore(pRok, inputKolicina);
     }
-
-    dodajUkorpuBtn.addEventListener('click', (e) => {
-        let objKorpa = {
-            naziv: e.target.parentNode.childNodes[0].innerText,
-            cena: e.target.parentNode.childNodes[1].innerText,
-            kolicina: Number(inputKolicina.value)
-        };
-        console.log(objKorpa); 
-        inputKolicina.value = '';
-})
-};
-
-
     
+    const dodaj = () => {
+            dodajUkorpuBtn.addEventListener('click', (e) => {
+                console.log(e.target);
+                let objKorpa = {
+                    name: e.target.parentNode.childNodes[0].innerText,
+                    price: e.target.parentNode.childNodes[1].innerText,
+                    amount: Number(inputKolicina.value)
+                }
+                console.log(objKorpa);
+                inputKolicina.value = '';
+                return objKorpa;
+            });
+    }
+    return dodaj();
+};

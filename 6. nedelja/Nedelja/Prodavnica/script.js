@@ -10,7 +10,7 @@
 // Proizvod iz korpe moze da se obrise klikom na dugme Obrisi iz korpe
 // 4. Ako je korisnik admin moze da doda nov proizvod
 
-import {Kupac, registrovaniKupci, ispisiKorpu} from './Kupac.js';
+import {Kupac, registrovaniKupci} from './Kupac.js';
 import { Proizvod, BelaTehnika, Prehrambeni, proizvodi, prikaziProizvod } from './Proizvod.js';
 
 // Selektovanje elemenata
@@ -34,12 +34,12 @@ forma.addEventListener('submit', (e) => {
         h3.innerHTML = `Vasa korpa: ${k.username}`
         korpa.append(h3);
         divKorpa.append(korpa);
+
         k.add(prikaziProizvod());
         // ispisi korpu
         k.korpa.forEach(pKorpa => {
             ispisiKorpu(pKorpa);
         });
-        console.log('ok');
         console.log(k.korpa);
     } else {
         console.log('Korisnik sa Vasim imenom nema nalog!');
@@ -54,8 +54,6 @@ forma.addEventListener('submit', (e) => {
 proizvodi.forEach((proizvod) => {
     prikaziProizvod(proizvod);
 });
-
-
 
 
 
