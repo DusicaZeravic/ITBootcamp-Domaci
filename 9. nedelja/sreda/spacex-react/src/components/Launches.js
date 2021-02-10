@@ -9,6 +9,7 @@ const Launches = ({ launches, year }) => {
                 launches.map(launch => <Launch key={launch.id} name={launch.name} date={launch.date_utc.slice(0, 4)} img={launch.links.patch.small} />)
                 :
                 filteredLaunches.map(launch => <Launch key={launch.id} name={launch.name} date={launch.date_utc.slice(0, 4)} img={launch.links.patch.small} />)
+                
 
             }
         </div>

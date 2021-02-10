@@ -1,0 +1,49 @@
+{
+  "quotes": [
+    {
+      "id": 1,
+      "text": "Тврд је орах, воћка чудновата",
+      "author": "П.П.Његош"
+    },
+    {
+      "text": "Mislim, dakle postojim.",
+      "author": "Sokrat",
+      "id": 2
+    },
+    {
+      "text": "Kakve su ti misli, takav ti je zivot.",
+      "author": "Nepoznat",
+      "id": 3
+    },
+    {
+      "id": "7251f6e8-fb6f-44eb-a0d1-7d83a16c045c",
+      "text": "Get it down. Take chances. It may be bad, but it's the only way you can do anything really good.",
+      "author": "William Faulkner"
+    },
+    {
+      "id": "b251b9f8-fe02-40df-a62f-5cc2046e32f0",
+      "text": "The way to get started is to quit talking and begin doing.",
+      "author": "Walt Disney"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Pera",
+      "email": "peraperic@pera.com",
+      "password": "asdf1234"
+    },
+    {
+      "id": "197091d0-e8ad-467e-bcda-2deddc79d328",
+      "username": "Mika",
+      "email": "mikanesto@gmail.com",
+      "password": "1234567k"
+    },
+    {
+      "id": "80905103-f546-404b-9d8d-5a57177c1abf",
+      "username": "Jelena",
+      "email": "jdlsjfldsj@fksldfds.com",
+      "password": "fjsljfs837"
+    }
+  ]
+}

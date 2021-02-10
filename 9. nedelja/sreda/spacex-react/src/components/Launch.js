@@ -3,7 +3,7 @@ const Launch = ({ name, date, img }) => {
         <div>
             <p style={{ fontWeight: 'bold' }}>{name}</p>
             <p>{date}</p>
-            <img src={img} alt="Img" />
+            <img src={img} alt={`Img for ${name} launch`} />
         </div>
     )
 }
