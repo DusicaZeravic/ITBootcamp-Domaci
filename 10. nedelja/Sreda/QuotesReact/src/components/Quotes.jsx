@@ -1,23 +1,26 @@
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 const Quotes = ({ quotes, user }) => {
 
-    return (
+    return user ? (
         <div>
             {
-                user ?
-                    <>
-                        <h1>Quotes</h1>
-                        {quotes.map(quote => <p key={quote.id}>{quote.text} - {quote.author}</p>)}
-                    </>
-                    :
-                    <Redirect to='/login' />
+                <>
+                    <h1>Quotes</h1>
+                    {quotes.map(quote => {
+                        return (
+                            <div key={quote.id}>
+                                <Link to={`/quotes/${quote.id}`}>{quote.text}</Link>
+                            </div>
+                        )
+                    }
+                    )}
+                </>
             }
-
-
-
         </div>
     )
+        :
+        <Redirect to='/login' />
 }
 
 export default Quotes

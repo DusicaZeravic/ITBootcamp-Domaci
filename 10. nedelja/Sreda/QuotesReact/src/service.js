@@ -9,4 +9,6 @@ export const postUser = (user) => axios.post(`http://localhost:3005${users}`, us
 
 export const getQuotes = () => axios.get(`http://localhost:3005${quotes}`);
 
+export const getQuoteById = (id) => axios.get(`http://localhost:3005${quotes}/${id}`)
+
 export const postQuote = (quote) => axios.post(`http://localhost:3005${quotes}`, quote);

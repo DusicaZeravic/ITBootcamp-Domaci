@@ -3,13 +3,13 @@ import CreateQuote from "./components/CreateQuote";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import Quotes from './components/Quotes';
+import Quote from './components//Quote';
 import Login from './components/Login';
 import { getQuotes } from './service';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 function App() {
   const [user, setUser] = useState(null);
-
   const [quotes, setQuotes] = useState([]);
 
   useEffect(() => {
@@ -45,11 +45,14 @@ function App() {
         <Route path='/register'>
           <Register />
         </Route>
+        <Route path='/quotes/:id'>
+          <Quote />
+        </Route>
         <Route path='/quotes'>
           <Quotes quotes={quotes} user={user} />
         </Route>
         <Route path='/createquote'>
-          <CreateQuote quotes={quotes} setQuotes={setQuotes} />
+          <CreateQuote setQuotes={setQuotes} user={user}/>
         </Route>
         <Route path='/'>
           <Home isLogged={false} />

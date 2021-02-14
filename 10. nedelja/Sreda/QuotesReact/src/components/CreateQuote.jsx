@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { Redirect } from 'react-router-dom';
 import { postQuote } from '../service';
 
-const CreateQuote = ({ setQuotes }) => {
+const CreateQuote = ({ setQuotes, user }) => {
     const [text, setText] = useState('');
     const [author, setAuthor] = useState('');
 
-    return (
+    return user ? (
         <div>
             <h1>Create Qoute</h1>
             <form onSubmit={(e) => {
@@ -34,6 +35,8 @@ const CreateQuote = ({ setQuotes }) => {
             </form>
         </div>
     )
+    :
+    <Redirect to='/login'/>
 }
 
 export default CreateQuote
